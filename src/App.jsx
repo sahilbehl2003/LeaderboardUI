@@ -14,7 +14,7 @@ const App = () => {
         const res = await fetch('https://gcpprod.testexperience.site/fetchLeaderboard');
         if (res.ok) {
           const data = await res.json();
-          setTableData(data.LeaderBoard);
+          setTableData(data.leaderBoard);
 
           if (territoryIdParam) {
             const filtered = data.LeaderBoard.find(entry => entry.territory_id === territoryIdParam);
