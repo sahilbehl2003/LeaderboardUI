@@ -6,7 +6,7 @@ const App = () => {
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
-        const res = await fetch('https://gcptest.testexperience.site/fetchLeaderboard_testing');
+        const res = await fetch('https://gcpprod.testexperience.site/fetchLeaderboard');
         if (res.ok) {
           const data = await res.json();
           setTableData(data.LeaderBoard);
