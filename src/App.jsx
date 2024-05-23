@@ -58,7 +58,7 @@ const App = () => {
                   <td className='px-6 py-4 whitespace-nowrap'>
                     <div className='text-sm text-gray-900'>{entry.territory_id}</div>
                   </td>
-                  <td className='px-6 py-4 whitespace-nowrap flex gap-1 justify-center items-center'>
+                  <td className='px-6 py-4 whitespace-nowrap flex gap-1 justify-start items-center'>
                     <img src="icon 2.png" alt="" className='h-4 w-4' />
                     <div className='text-sm text-gray-900'>{entry.total_points}</div>
                   </td>
