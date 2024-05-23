@@ -14,10 +14,10 @@ const App = () => {
         const res = await fetch('https://gcpprod.testexperience.site/fetchLeaderboard');
         if (res.ok) {
           const data = await res.json();
-          setTableData(data.leaderBoard);
+          setTableData(data.leaderboard);
 
           if (territoryIdParam) {
-            const filtered = data.leaderBoard.find(entry => entry.territory_id === territoryIdParam);
+            const filtered = data.leaderboard.find(entry => entry.territory_id === territoryIdParam);
             setFilteredEntry(filtered);
           }
         } else {
