@@ -17,7 +17,7 @@ const App = () => {
           setTableData(data.leaderBoard);
 
           if (territoryIdParam) {
-            const filtered = data.LeaderBoard.find(entry => entry.territory_id === territoryIdParam);
+            const filtered = data.leaderBoard.find(entry => entry.territory_id === territoryIdParam);
             setFilteredEntry(filtered);
           }
         } else {
