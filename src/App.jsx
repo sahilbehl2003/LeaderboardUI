@@ -17,8 +17,9 @@ const App = () => {
           setTableData(data.leaderboard);
 
           if (territoryIdParam) {
-            const filtered = data.leaderboard.find(entry => entry.territory_id === territoryIdParam);
-            setFilteredEntry(filtered);
+            const filteredIndex = data.leaderboard.findIndex(entry => entry.territory_id === territoryIdParam);
+            const filtered = data.leaderboard[filteredIndex];
+            setFilteredEntry({ ...filtered, index: filteredIndex });
           }
         } else {
           throw new Error('Failed to fetch leaderboard data');
@@ -70,8 +71,8 @@ const App = () => {
                 <tr key={index} className='hover:bg-gray-100'>
                   <td className='px-6 py-4 whitespace-nowrap'>
                     <div className='text-sm text-gray-900'>
-                      {entry.ranking}
-                      {entry.ranking === 1 ? 'st' : entry.ranking === 2 ? 'nd' : entry.ranking === 3 ? 'rd' : 'th'}
+                      {index + 1}
+                      {index === 0 ? 'st' : index === 1 ? 'nd' : index === 2 ? 'rd' : 'th'}
                     </div>
                   </td>
                   <td className='px-6 py-4 whitespace-nowrap'>
@@ -90,8 +91,8 @@ const App = () => {
         {filteredEntry ? (
           <div className='fixed w-[90%] mx-auto bottom-4 left-0 right-0 bg-[#4285F4] border-2 border-blue-500 rounded-full flex justify-between items-center px-4 py-2 shadow-xl'>
             <div className='text-white'>
-              {filteredEntry.ranking}
-              {filteredEntry.ranking === 1 ? 'st' : filteredEntry.ranking === 2 ? 'nd' : filteredEntry.ranking === 3 ? 'rd' : 'th'}
+              {filteredEntry.index}
+              {filteredEntry.index === 0 ? 'st' : filteredEntry.index === 1 ? 'nd' : filteredEntry.index === 2 ? 'rd' : 'th'}
             </div>
             <div className='text-white'>
               {filteredEntry.territory_id}
